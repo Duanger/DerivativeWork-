@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class playerLook : MonoBehaviour {
 
-    [HideInInspector] public float mouseSense = 2.0f;
+    public float mouseSense = 200f;
 
     private float m_xClamp = 0.0f;
+    
     private GameObject m_PlayerController;
 
 	// Use this for initialization
@@ -28,28 +29,10 @@ public class playerLook : MonoBehaviour {
         float m_xPos = Input.GetAxis("Mouse X");
         float m_yPos = Input.GetAxis("Mouse Y");
 
-        float mouseRotX = m_xPos * mouseSense;
-        float mouseRotY = m_yPos * mouseSense;
 
-        m_xClamp -= mouseRotY;
-
-        Vector3 m_targetRot = transform.rotation.eulerAngles;
-        Vector3 m_targetRotBody = m_PlayerController.transform.rotation.eulerAngles;
-
-        m_targetRot.x -= mouseRotY;
-        m_targetRot.z = 0;
-        m_targetRotBody.y += mouseRotX;
-
-        if(m_xClamp > 90)
-        {
-            m_xClamp = 90;
-            m_targetRot.x = 90;
-        }
-        else if(m_xClamp < -90)
-        {
-            m_xClamp = -90;
-            m_targetRot.x = 270;
-        }
-        m_PlayerController.transform.rotation = Quaternion.Euler(m_targetRotBody);
+       transform.Rotate(-m_yPos * Time.deltaTime * mouseSense, m_xPos * Time.deltaTime * mouseSense, 0f);
+       
+      Vector3 clampRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y,0f);
+      transform.eulerAngles = clampRot;
     }
 }
