@@ -6,7 +6,8 @@ public class playerController : MonoBehaviour
 {
 
 	private Rigidbody playerRigidbody;
-    public float walkingSpeed = 200f;
+	public bool PlayerStandstill;
+	public float walkingSpeed = 2f;
  
 	void Awake ()
 	{
@@ -25,6 +26,14 @@ public class playerController : MonoBehaviour
 	    targetDirection = Camera.main.transform.TransformDirection(targetDirection);
 	  
 	    playerRigidbody.MovePosition(playerRigidbody.transform.position + targetDirection *Time.deltaTime  * walkingSpeed);
+	    if (PlayerStandstill)
+	    {
+		    walkingSpeed = 0f;
+	    }
+	    else
+	    {
+		    walkingSpeed = 2f;
+	    }
     }
   
 }
