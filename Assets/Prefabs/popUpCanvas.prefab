@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 224596630413761500}
   - component: {fileID: 222492149189165612}
   - component: {fileID: 114596262495406248}
+  - component: {fileID: 114999694359857596}
   m_Layer: 5
   m_Name: popUpText
   m_TagString: Untagged
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -115,7 +116,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: -10 self-worth
+--- !u!114 &114999694359857596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857071678238116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b1db42b39575f4bb008c959d9aadcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222492149189165612
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -169,7 +181,7 @@ RectTransform:
   m_GameObject: {fileID: 1857071678238116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
   m_Children: []
   m_Father: {fileID: 224072267276861594}
   m_RootOrder: 0
