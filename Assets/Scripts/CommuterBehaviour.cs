@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,30 +12,28 @@ public class CommuterBehaviour : MonoBehaviour
 	public Color TargetColor;
 	
 	private float currentTime;
+	private GameObject playerObj;
 	private Renderer communterRenderer;
 	private Rigidbody communterRigid;
-	private NavMeshAgent commuterNavMeshAgent;
+	
 	void Start ()
 	{
 		communterRenderer = GetComponent<Renderer>();
 		communterRigid = GetComponent<Rigidbody>();
-		commuterNavMeshAgent = GetComponent<NavMeshAgent>();
+	    playerObj = GameObject.FindGameObjectWithTag("Player");
 		communterRenderer.material.color = DefaultColor;
-		GoTo();
+		//Vector3 intialSpawnVelocity = new Vector3(communterRigid.transform.position.x ,0,0);
 	}
 	
 	void FixedUpdate ()
 	{
-		
 		currentTime += Time.deltaTime;
+		transform.LookAt(playerObj.transform);
+		communterRigid.transform.position += communterRigid.transform.forward * Time.deltaTime * 4f;
 		//StartCoroutine(CommuterColoring(SittingDuration));
 	}
 
-	void GoTo()
-	{
-		Vector3 targetVector3 = new Vector3(0.194908f,0f,4.103632f);
-		commuterNavMeshAgent.SetDestination(targetVector3);
-	}
+	
 	IEnumerator CommuterColoring(float sitDuration)
 	{
 		communterRenderer.material.color = Color.Lerp(DefaultColor, TargetColor, currentTime / sitDuration);

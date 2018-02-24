@@ -6,6 +6,9 @@ using UnityEngine;
 public class playerLook : MonoBehaviour {
 
     public float mouseSense = 200f;
+    public float RayCastDistance;
+    public bool LeftSpawnerHit;
+    public bool RightSpawnerHit;
 
     private float m_xClamp = 0.0f;
     
@@ -23,6 +26,7 @@ public class playerLook : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         camMouseRot();
+        RaycastSpawning();
 	}
     void camMouseRot()
     {
@@ -34,5 +38,31 @@ public class playerLook : MonoBehaviour {
        
       Vector3 clampRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y,0f);
       transform.eulerAngles = clampRot;
+    }
+
+    void RaycastSpawning()
+    {
+        var leftCommuteRaycastHit = new RaycastHit();
+        var rightCommuteRaycastHit = new RaycastHit();
+        int spawnerLayerMask = LayerMask.GetMask("Spawner");
+        int spawnerLayerMask2 = LayerMask.GetMask("Spawner1");
+        Debug.DrawRay(transform.position,transform.forward, Color.blue);
+        if (Physics.Raycast(transform.position, transform.forward, out rightCommuteRaycastHit, RayCastDistance,spawnerLayerMask))
+        {
+            RightSpawnerHit = true;
+        }
+        else if(!Physics.Raycast(transform.position, transform.forward, out rightCommuteRaycastHit, RayCastDistance,spawnerLayerMask))
+        {
+            RightSpawnerHit = false;
+        }
+        if (Physics.Raycast(transform.position, transform.forward, out leftCommuteRaycastHit, RayCastDistance,spawnerLayerMask2))
+        {
+            LeftSpawnerHit = true;
+        }
+        if (!Physics.Raycast(transform.position, transform.forward, out leftCommuteRaycastHit, RayCastDistance,spawnerLayerMask2))
+        {
+            LeftSpawnerHit = false;
+        }
+
     }
 }

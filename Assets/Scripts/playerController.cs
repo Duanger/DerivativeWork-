@@ -32,7 +32,7 @@ public class playerController : MonoBehaviour
 	    }
 	    else
 	    {
-		    walkingSpeed = 2f;
+		    walkingSpeed = 4f;
 	    }
     }
   
