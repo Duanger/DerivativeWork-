@@ -9,6 +9,9 @@ public class NPCBehaviour : MonoBehaviour
 
 	public int NPCNumber;
 	public bool FirstNPCEntered;
+	public bool SecondNPCEntered;
+	public bool ThirdNPCEntered;
+	public bool FourthNPCEntered;
 	void Start () {
 		overlayUIGameObject = GameObject.FindGameObjectWithTag("Overlay");
 		overlayUIGameObject.SetActive(false);
@@ -25,6 +28,20 @@ public class NPCBehaviour : MonoBehaviour
 				{
 					FirstNPCEntered = true;
 				}
+				if (NPCNumber == 2)
+				{
+					SecondNPCEntered = true;
+				}
+
+				if (NPCNumber == 3)
+				{
+					ThirdNPCEntered = true;
+				}
+
+				if (NPCNumber == 4)
+				{
+					FourthNPCEntered = true;
+				}
 			}
 		}
 	}
@@ -34,7 +51,24 @@ public class NPCBehaviour : MonoBehaviour
 		if (other.CompareTag("Player"))
 		{
 			overlayUIGameObject.SetActive(false);
-			FirstNPCEntered = false;
+			if (NPCNumber == 1)
+			{
+				FirstNPCEntered = false;
+			}
+			if (NPCNumber == 2)
+			{
+				SecondNPCEntered = false;
+			}
+
+			if (NPCNumber == 3)
+			{
+				ThirdNPCEntered = false;
+			}
+
+			if (NPCNumber == 4)
+			{
+				FourthNPCEntered = false;
+			}
 		}
 	}
 }
