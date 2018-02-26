@@ -8,11 +8,17 @@ public class playerLook : MonoBehaviour {
     public float mouseSense = 200f;
     public float RayCastDistance;
     public GameObject ProtoTypeNPC;
+    public GameObject ProtoTypeNPC2;
+    public GameObject ProtoTypeNPC3;
+    public GameObject ProtoTypeNPC4;
     public bool LeftSpawnerHit;
     public bool RightSpawnerHit;
 
     private float m_xClamp = 0.0f;
-    private NPCBehaviour NPCBehave;
+    private NPCBehaviour NPCBehave1;
+    private NPCBehaviour NPCBehave2;
+    private NPCBehaviour NPCBehave3;
+    private NPCBehaviour NPCBehave4;
     private GameObject m_PlayerController;
 
 	// Use this for initialization
@@ -22,7 +28,10 @@ public class playerLook : MonoBehaviour {
     private void Start()
     {
         m_PlayerController = GameObject.FindGameObjectWithTag("Player");
-        NPCBehave = ProtoTypeNPC.GetComponent<NPCBehaviour>();
+        NPCBehave1 = ProtoTypeNPC.GetComponent<NPCBehaviour>();
+        NPCBehave2 = ProtoTypeNPC2.GetComponent<NPCBehaviour>();
+        //NPCBehave3 = ProtoTypeNPC3.GetComponent<NPCBehaviour>();
+        //NPCBehave4 = ProtoTypeNPC4.GetComponent<NPCBehaviour>()
     }
 
     // Update is called once per frame
@@ -40,11 +49,11 @@ public class playerLook : MonoBehaviour {
        
       Vector3 clampRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y,0f);
       transform.eulerAngles = clampRot;
-        if (NPCBehave.FirstNPCEntered)
+        if (NPCBehave1.FirstNPCEntered || NPCBehave2.SecondNPCEntered || NPCBehave1.ThirdNPCEntered || NPCBehave1.FourthNPCEntered)
         {
             mouseSense = 0f;
         }
-        else if(!NPCBehave.FirstNPCEntered)
+        else if(!NPCBehave1.FirstNPCEntered || !NPCBehave2.SecondNPCEntered || !NPCBehave1.ThirdNPCEntered || !NPCBehave1.FourthNPCEntered)
         {
             mouseSense = 200f;
         }

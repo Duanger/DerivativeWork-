@@ -1130,6 +1130,17 @@ MonoBehaviour:
   SecondNPCEntered: 0
   ThirdNPCEntered: 0
   FourthNPCEntered: 0
+  OverlayUIGameObject: {fileID: 1766827882}
+  ConversationText:
+  - You are a piece of garbage.
+  - Good. Your highly inflated sens-I mean self is not here.
+  - Believe what you want buddy, I calls it as I sees it.
+  ChoiceOne:
+  - I believe it.
+  - Thank you trashcan.
+  ChoiceTwo:
+  - I am not!
+  - 
 --- !u!1 &434412697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,6 +2962,9 @@ MonoBehaviour:
   mouseSense: 200
   RayCastDistance: 100
   ProtoTypeNPC: {fileID: 389230272}
+  ProtoTypeNPC2: {fileID: 1415101596}
+  ProtoTypeNPC3: {fileID: 0}
+  ProtoTypeNPC4: {fileID: 0}
   LeftSpawnerHit: 0
   RightSpawnerHit: 0
 --- !u!114 &993377150
@@ -3825,6 +3839,17 @@ MonoBehaviour:
   SecondNPCEntered: 0
   ThirdNPCEntered: 0
   FourthNPCEntered: 0
+  OverlayUIGameObject: {fileID: 1766827882}
+  ConversationText:
+  - Yoyoyo I'm a pole-tergeist!!
+  - I'm also the spirit of future past telling ya you aint tall enough
+  - 
+  ChoiceOne:
+  - what the fuc-
+  - OK
+  ChoiceTwo:
+  - I just wanna find my balloon.
+  - 
 --- !u!65 &1415101598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3835,7 +3860,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1210525, y: 2, z: 1.5567288}
+  m_Size: {x: 8, y: 2.2, z: 7}
   m_Center: {x: 0.034865737, y: 0, z: 0.27836442}
 --- !u!23 &1415101599
 MeshRenderer:
@@ -3897,13 +3922,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1415101596}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.39, y: -0.41, z: 1.04}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 9.31, y: 0.12, z: 1.348}
+  m_LocalScale: {x: 0.09954119, y: 1.2100168, z: 0.09954122}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1417328100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4065,7 +4090,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1766827887}
-        m_MethodName: SecondChoicePressed
+        m_MethodName: StopAllCoroutines
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4396,6 +4421,9 @@ MonoBehaviour:
   PlayerStandstill: 0
   walkingSpeed: 8
   ProtoNPC: {fileID: 389230272}
+  ProtoNPC2: {fileID: 1415101596}
+  ProtoNPC3: {fileID: 0}
+  ProtoNPC4: {fileID: 0}
 --- !u!4 &1487898074
 Transform:
   m_ObjectHideFlags: 0
@@ -4917,7 +4945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9d20ce7c043fc48b805475fcf8ff41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DescriptiveAudioSource: {fileID: 1434608260}
   FirstNPC: {fileID: 389230272}
   SecondNPC: {fileID: 1415101596}
   FirstNPChoice1:

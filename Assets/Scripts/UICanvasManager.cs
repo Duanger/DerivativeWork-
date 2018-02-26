@@ -6,15 +6,16 @@ using UnityEngine.UI;
 
 public class UICanvasManager : MonoBehaviour
 {
+    private AudioSource descriptiveAudioSource;
     private bool reitRunOnce;
-    private bool deleteRunOnce;
     private bool finishedRunning;
     private string descriptiveText;
     private playerLook playLooker;
     private NPCBehaviour firstNPCBehave;
     private NPCBehaviour secondNPCBehave;
+   
 
-    public AudioSource DescriptiveAudioSource;
+    
     public GameObject FirstNPC;
     public GameObject SecondNPC; 
     public string[] FirstNPChoice1 = new string[2];
@@ -29,39 +30,39 @@ public class UICanvasManager : MonoBehaviour
     {
         firstNPCBehave = FirstNPC.GetComponent<NPCBehaviour>();
         secondNPCBehave = SecondNPC.GetComponent<NPCBehaviour>();
+        descriptiveAudioSource = GetComponentInChildren<AudioSource>();
         descriptiveText = DescriptiveText.text;
         DescriptiveText.text = descriptiveText;
+        DescriptiveText.text = "";
         FirstChoice.enabled = false;
         SecondChoice.enabled = false;
     }
 
     // Update is called once per frame
-    void Update()
+    public void EnteringNPCOne()
     {
         if (firstNPCBehave.FirstNPCEntered && !reitRunOnce)
         {
-            descriptiveText = "";
-            descriptiveText = "You are a piece of shit!";
-            StartCoroutine(reiterateDescriptionText(descriptiveText, DescriptiveText, FirstChoice,
-                SecondChoice,
-                FirstNPChoice1, FirstNPChoice2, 0));
-        }
-
-        if (reitRunOnce && finishedRunning)
-        {
-            if (!firstNPCBehave.FirstNPCEntered)
+            bool stringEquated = false;
+            if (!stringEquated)
             {
-                reitRunOnce = false;
-                finishedRunning = false;
+                StartCoroutine(reiterateDescriptionText(firstNPCBehave,descriptiveText, DescriptiveText, FirstChoice,
+                    SecondChoice,firstNPCBehave.ChoiceOne, firstNPCBehave.ChoiceTwo, 0));
             }
         }
+    }
 
+    public void EnteringNPCTwo()
+    {
         if (secondNPCBehave.SecondNPCEntered && !reitRunOnce)
         {
-            descriptiveText = "";
-            descriptiveText = "Yo yo I'm a pole-tergeist.";
-            StartCoroutine(reiterateDescriptionText(descriptiveText, DescriptiveText, FirstChoice,
-                FirstChoice, SecondNPChoice1, SecondNPChoice2, 0));
+            bool stringEquated = false;
+            if (!stringEquated)
+            {
+                descriptiveText = secondNPCBehave.ConversationText[0];
+                StartCoroutine(reiterateDescriptionText(secondNPCBehave,descriptiveText, DescriptiveText, FirstChoice,
+                    FirstChoice, secondNPCBehave.ChoiceOne, secondNPCBehave.ChoiceTwo, 0));
+            }
         }
         if (reitRunOnce && finishedRunning)
         {
@@ -72,77 +73,106 @@ public class UICanvasManager : MonoBehaviour
             }
         }
     }
-    
-
+   
     public void FirstChoicePressed()
     {
-        if (FirstChoice.text != FirstNPChoice1[1])
+        if (FirstChoice.text != firstNPCBehave.ChoiceOne[1])
         {
             if (firstNPCBehave.FirstNPCEntered)
             {
                 DescriptiveText.text = "";
-                descriptiveText = DescriptiveText.text;
-                DescriptiveText.text = descriptiveText;
                 FirstChoice.enabled = false;
                 SecondChoice.enabled = false;
-                descriptiveText = "Good. Your highly inflated sens-I mean self is not here.";
-                StartCoroutine(reiterateDescriptionText(descriptiveText, DescriptiveText, FirstChoice,
-                    SecondChoice,
-                    FirstNPChoice1, FirstNPChoice2, 1));
+                descriptiveText = firstNPCBehave.ConversationText[1];
+                StartCoroutine(reiterateDescriptionText(firstNPCBehave,descriptiveText, DescriptiveText, FirstChoice,SecondChoice,
+                    firstNPCBehave.ChoiceOne, firstNPCBehave.ChoiceTwo, 1));
             }
         }
-
-        else if (FirstChoice.text == FirstNPChoice1[1])
+        else if (FirstChoice.text == firstNPCBehave.ChoiceOne[1])
         {
-            gameObject.SetActive(false);
             firstNPCBehave.FirstNPCEntered = false;
+            gameObject.SetActive(false);
         }
+        if (FirstChoice.text != secondNPCBehave.ChoiceOne[1])
+        {
+            if (secondNPCBehave.FirstNPCEntered)
+            {
+                DescriptiveText.text = "";
+                FirstChoice.enabled = false;
+                SecondChoice.enabled = false;
+                descriptiveText = secondNPCBehave.ConversationText[1];
+                StartCoroutine(reiterateDescriptionText(secondNPCBehave,descriptiveText, DescriptiveText, FirstChoice,SecondChoice,
+                    secondNPCBehave.ChoiceOne, secondNPCBehave.ChoiceTwo, 1));
+            }
+        }
+        else if (FirstChoice.text == secondNPCBehave.ChoiceOne[1])
+        {
+            firstNPCBehave.FirstNPCEntered = false;
+            gameObject.SetActive(false);
+        } 
     }
 
     public void SecondChoicePressed()
     {
-        if (FirstChoice.text != FirstNPChoice1[1])
+        if (SecondChoice.text != firstNPCBehave.ChoiceTwo[1])
         {
             if (firstNPCBehave.FirstNPCEntered)
             {
                 DescriptiveText.text = "";
-                descriptiveText = DescriptiveText.text;
-                DescriptiveText.text = descriptiveText;
                 FirstChoice.enabled = false;
                 SecondChoice.enabled = false;
-                descriptiveText = "Believe what you want buddy, I calls it as I sees it.";
-                StartCoroutine(reiterateDescriptionText(descriptiveText, DescriptiveText, FirstChoice,
+                descriptiveText = firstNPCBehave.ConversationText[2];
+                StartCoroutine(reiterateDescriptionText(firstNPCBehave,descriptiveText, DescriptiveText, FirstChoice,
                     SecondChoice,
-                    FirstNPChoice1, FirstNPChoice2, 1));
+                    firstNPCBehave.ChoiceOne, firstNPCBehave.ChoiceTwo, 1));
             }
         }
-        else if (FirstChoice.text == FirstNPChoice1[1])
+        else if (SecondChoice.text == firstNPCBehave.ChoiceTwo[1])
         {
             firstNPCBehave.FirstNPCEntered = false;
+            gameObject.SetActive(false);
+        }
+        if (SecondChoice.text != secondNPCBehave.ChoiceTwo[1])
+        {
+            if (secondNPCBehave.SecondNPCEntered)
+            {
+                DescriptiveText.text = "";
+                FirstChoice.enabled = false;
+                SecondChoice.enabled = false;
+                descriptiveText = secondNPCBehave.ConversationText[2];
+                StartCoroutine(reiterateDescriptionText(firstNPCBehave,descriptiveText, DescriptiveText, FirstChoice,
+                    SecondChoice,
+                    secondNPCBehave.ChoiceOne, secondNPCBehave.ChoiceTwo, 1));
+            }
+        }
+        else if (SecondChoice.text == secondNPCBehave.ChoiceTwo[1])
+        {
+            secondNPCBehave.FirstNPCEntered = false;
+            gameObject.SetActive(false);
         }
     }
 
-    private IEnumerator reiterateDescriptionText(string descriptionText,
-        Text descriptionTextObj, Text firstText, Text secondText, string[] firstNPCString,
+    private IEnumerator reiterateDescriptionText(NPCBehaviour npcBehave,string descriptionText,Text descriptionTextObj, Text firstText, Text secondText, string[] firstNPCString,
         string[] secondNPCString, int choiceNumber)
     {
         reitRunOnce = true;
+        descriptionText = npcBehave.ConversationText[choiceNumber];
         foreach (char letter in descriptionText.ToCharArray())
         {
             descriptionTextObj.text += letter;
-            DescriptiveAudioSource.PlayOneShot(DescriptiveAudioSource.clip);
+            descriptiveAudioSource.PlayOneShot(descriptiveAudioSource.clip);
             yield return 0;
             yield return new WaitForSeconds(0.09f);
         }
 
-        if (descriptionTextObj.text == descriptiveText)
+        if (descriptionTextObj.text == npcBehave.ConversationText[choiceNumber])
         {
             firstText.enabled = true;
             secondText.enabled = true;
             firstText.text = firstNPCString[choiceNumber];
             secondText.text = secondNPCString[choiceNumber];
             finishedRunning = true;
-            StopCoroutine(reiterateDescriptionText(descriptionText, descriptionTextObj, firstText, secondText,
+            StopCoroutine(reiterateDescriptionText(npcBehave,descriptionText, descriptionTextObj, firstText, secondText,
                 firstNPCString, secondNPCString, choiceNumber));
         }
     }
