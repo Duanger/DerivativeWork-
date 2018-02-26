@@ -6,12 +6,16 @@ public class playerController : MonoBehaviour
 {
 
 	private Rigidbody playerRigidbody;
+	private NPCBehaviour NPCBehave;
+	
 	public bool PlayerStandstill;
 	public float walkingSpeed = 2f;
+	public GameObject ProtoNPC;
  
 	void Awake ()
 	{
 		playerRigidbody = GetComponent<Rigidbody>();
+		NPCBehave = ProtoNPC.GetComponent<NPCBehaviour>();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +30,7 @@ public class playerController : MonoBehaviour
 	    targetDirection = Camera.main.transform.TransformDirection(targetDirection);
 	  
 	    playerRigidbody.MovePosition(playerRigidbody.transform.position + targetDirection *Time.deltaTime  * walkingSpeed);
-	    if (PlayerStandstill)
+	    if (NPCBehave.FirstNPCEntered)
 	    {
 		    walkingSpeed = 0f;
 	    }
@@ -34,6 +38,14 @@ public class playerController : MonoBehaviour
 	    {
 		    walkingSpeed = 4f;
 	    }
+	    /*if (PlayerStandstill)
+	    {
+		    walkingSpeed = 0f;
+	    }
+	    else
+	    {
+		    walkingSpeed = 4f;
+	    }*/
     }
   
 }

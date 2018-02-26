@@ -7,11 +7,12 @@ public class playerLook : MonoBehaviour {
 
     public float mouseSense = 200f;
     public float RayCastDistance;
+    public GameObject ProtoTypeNPC;
     public bool LeftSpawnerHit;
     public bool RightSpawnerHit;
 
     private float m_xClamp = 0.0f;
-    
+    private NPCBehaviour NPCBehave;
     private GameObject m_PlayerController;
 
 	// Use this for initialization
@@ -21,6 +22,7 @@ public class playerLook : MonoBehaviour {
     private void Start()
     {
         m_PlayerController = GameObject.FindGameObjectWithTag("Player");
+        NPCBehave = ProtoTypeNPC.GetComponent<NPCBehaviour>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,14 @@ public class playerLook : MonoBehaviour {
        
       Vector3 clampRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y,0f);
       transform.eulerAngles = clampRot;
+        if (NPCBehave.FirstNPCEntered)
+        {
+            mouseSense = 0f;
+        }
+        else if(!NPCBehave.FirstNPCEntered)
+        {
+            mouseSense = 200f;
+        }
     }
 
     void RaycastSpawning()

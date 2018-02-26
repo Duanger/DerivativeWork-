@@ -14,13 +14,17 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="BalloonBehaviour.cs" t="Include" />
           <e p="CameraShake.cs" t="Include" />
           <e p="CommuterBehaviour.cs" t="Include" />
           <e p="CommuterCollision.cs" t="Include" />
+          <e p="CommuterSpawner.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="NPCBehaviour.cs" t="Include" />
           <e p="playerController.cs" t="Include" />
           <e p="playerLook.cs" t="Include" />
           <e p="PopUpBehaviour.cs" t="Include" />
+          <e p="UICanvasManager.cs" t="Include" />
         </e>
       </e>
       <e p="AUTHORity.sln" t="IncludeFlat" />

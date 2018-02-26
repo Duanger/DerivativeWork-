@@ -7,6 +7,8 @@ TagManager:
   - Manager
   - Commuter
   - RightSpawner
+  - Roof
+  - Overlay
   layers:
   - Default
   - TransparentFX
