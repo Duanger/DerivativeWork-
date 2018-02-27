@@ -147,7 +147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -233, y: -121}
+  m_AnchoredPosition: {x: -127, y: -121}
   m_SizeDelta: {x: 1125.2, y: 211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23469253
@@ -940,8 +940,8 @@ GameObject:
   m_Component:
   - component: {fileID: 332122397}
   - component: {fileID: 332122396}
-  - component: {fileID: 332122395}
   - component: {fileID: 332122394}
+  - component: {fileID: 332122395}
   - component: {fileID: 332122393}
   - component: {fileID: 332122392}
   m_Layer: 0
@@ -969,14 +969,14 @@ MonoBehaviour:
   FourthNPCEntered: 0
   OverlayUIGameObject: {fileID: 1766827882}
   ConversationText:
-  - You are a piece of garbage.
-  - Good. Your highly inflated sens-I mean self is not here.
-  - Believe what you want buddy, I calls it as I sees it.
+  - Sup Yakult boi, pass me some yoggies.
+  - You trusted a white boi?
+  - What the fuck why did you do that
   ChoiceOne:
-  - I believe it.
-  - Thank you trashcan.
+  - '*Pass Yakult Probiotic Drink*'
+  - YOU LOSE
   ChoiceTwo:
-  - I am not!
+  - '*Make a hole and throw at it*'
   - 
 --- !u!65 &332122393
 BoxCollider:
@@ -1024,8 +1024,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &332122395
-CapsuleCollider:
+--- !u!65 &332122395
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1033,9 +1033,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &332122396
 MeshFilter:
@@ -1043,20 +1042,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 332122391}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &332122397
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 332122391}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -7.8, y: -0.41, z: -0.32}
+  m_LocalRotation: {x: -0, y: 0.36662793, z: -0, w: 0.93036765}
+  m_LocalPosition: {x: -5.226, y: -0.41, z: -0.924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 43.016003, z: 0}
 --- !u!1 &352225248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,8 +3088,8 @@ MonoBehaviour:
   RayCastDistance: 100
   ProtoTypeNPC: {fileID: 389230272}
   ProtoTypeNPC2: {fileID: 1415101596}
-  ProtoTypeNPC3: {fileID: 0}
-  ProtoTypeNPC4: {fileID: 0}
+  ProtoTypeNPC3: {fileID: 332122391}
+  ProtoTypeNPC4: {fileID: 1876185802}
   LeftSpawnerHit: 0
   RightSpawnerHit: 0
 --- !u!114 &993377150
@@ -4329,7 +4328,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: '
+
+'
 --- !u!222 &1434608259
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4548,8 +4549,8 @@ MonoBehaviour:
   walkingSpeed: 8
   ProtoNPC: {fileID: 389230272}
   ProtoNPC2: {fileID: 1415101596}
-  ProtoNPC3: {fileID: 0}
-  ProtoNPC4: {fileID: 0}
+  ProtoNPC3: {fileID: 332122391}
+  ProtoNPC4: {fileID: 1876185802}
 --- !u!4 &1487898074
 Transform:
   m_ObjectHideFlags: 0
@@ -5426,14 +5427,14 @@ MonoBehaviour:
   FourthNPCEntered: 0
   OverlayUIGameObject: {fileID: 1766827882}
   ConversationText:
-  - You are a piece of garbage.
-  - Good. Your highly inflated sens-I mean self is not here.
+  - Hello child..
+  - Real original child-monster.
   - Believe what you want buddy, I calls it as I sees it.
   ChoiceOne:
-  - I believe it.
-  - Thank you trashcan.
+  - Who are you - Wait lemme guess needle know basis?
+  - Pop it papi.
   ChoiceTwo:
-  - I am not!
+  - Hello needle-man
   - 
 --- !u!65 &1876185804
 BoxCollider:

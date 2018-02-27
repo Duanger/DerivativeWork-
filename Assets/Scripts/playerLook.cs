@@ -30,6 +30,8 @@ public class playerLook : MonoBehaviour {
         m_PlayerController = GameObject.FindGameObjectWithTag("Player");
         NPCBehave1 = ProtoTypeNPC.GetComponent<NPCBehaviour>();
         NPCBehave2 = ProtoTypeNPC2.GetComponent<NPCBehaviour>();
+        NPCBehave3 = ProtoTypeNPC3.GetComponent<NPCBehaviour>();
+        NPCBehave4 = ProtoTypeNPC4.GetComponent<NPCBehaviour>();
         //NPCBehave3 = ProtoTypeNPC3.GetComponent<NPCBehaviour>();
         //NPCBehave4 = ProtoTypeNPC4.GetComponent<NPCBehaviour>()
     }
@@ -49,11 +51,11 @@ public class playerLook : MonoBehaviour {
        
       Vector3 clampRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y,0f);
       transform.eulerAngles = clampRot;
-        if (NPCBehave1.FirstNPCEntered || NPCBehave2.SecondNPCEntered || NPCBehave1.ThirdNPCEntered || NPCBehave1.FourthNPCEntered)
+        if (NPCBehave1.FirstNPCEntered || NPCBehave2.SecondNPCEntered || NPCBehave3.ThirdNPCEntered || NPCBehave4.FourthNPCEntered)
         {
             mouseSense = 0f;
         }
-        else if(!NPCBehave1.FirstNPCEntered || !NPCBehave2.SecondNPCEntered || !NPCBehave1.ThirdNPCEntered || !NPCBehave1.FourthNPCEntered)
+        else if(!NPCBehave1.FirstNPCEntered || !NPCBehave2.SecondNPCEntered || !NPCBehave3.ThirdNPCEntered || !NPCBehave4.FourthNPCEntered)
         {
             mouseSense = 200f;
         }
