@@ -26,14 +26,13 @@ public class NPCBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //overlayUIGameObject.SetActive(true);
+            OverlayUIGameObject.SetActive(true);
             if (NPCNumber == 1)
             {
                 if (Input.GetKey(KeyCode.E))
                 {
-                    OverlayUIGameObject.SetActive(true);
                     FirstNPCEntered = true;
-                    overlayManager.EnteringNPCOne();
+                    overlayManager.NPCEntered(1);
                 }
             }
 
@@ -41,9 +40,8 @@ public class NPCBehaviour : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.E))
                 {
-                    OverlayUIGameObject.SetActive(true);
                     SecondNPCEntered = true;
-                    overlayManager.EnteringNPCTwo();
+                    overlayManager.NPCEntered(2);
                 }
             }
 
@@ -52,7 +50,7 @@ public class NPCBehaviour : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     ThirdNPCEntered = true;
-                    //overlayManager.EnteringNPCThree();
+                    overlayManager.NPCEntered(3);
                 }
             }
 
@@ -61,12 +59,11 @@ public class NPCBehaviour : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     FourthNPCEntered = true;
-                    //overlayManager.EnteringNPCFour();
+                    overlayManager.NPCEntered(4);
                 }
             }
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

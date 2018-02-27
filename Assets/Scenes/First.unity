@@ -931,6 +931,132 @@ Transform:
   m_Father: {fileID: 1976100322}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &332122391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 332122397}
+  - component: {fileID: 332122396}
+  - component: {fileID: 332122395}
+  - component: {fileID: 332122394}
+  - component: {fileID: 332122393}
+  - component: {fileID: 332122392}
+  m_Layer: 0
+  m_Name: Commuter3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &332122392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332122391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5c9cbfe65883f40840f4e53cee71f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCNumber: 3
+  FirstNPCEntered: 0
+  SecondNPCEntered: 0
+  ThirdNPCEntered: 0
+  FourthNPCEntered: 0
+  OverlayUIGameObject: {fileID: 1766827882}
+  ConversationText:
+  - You are a piece of garbage.
+  - Good. Your highly inflated sens-I mean self is not here.
+  - Believe what you want buddy, I calls it as I sees it.
+  ChoiceOne:
+  - I believe it.
+  - Thank you trashcan.
+  ChoiceTwo:
+  - I am not!
+  - 
+--- !u!65 &332122393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332122391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1210525, y: 2, z: 1.5567288}
+  m_Center: {x: 0.034865737, y: 0, z: 0.27836442}
+--- !u!23 &332122394
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332122391}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!136 &332122395
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332122391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &332122396
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332122391}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &332122397
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332122391}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -7.8, y: -0.41, z: -0.32}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &352225248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,7 +3968,7 @@ MonoBehaviour:
   OverlayUIGameObject: {fileID: 1766827882}
   ConversationText:
   - Yoyoyo I'm a pole-tergeist!!
-  - I'm also the spirit of future past telling ya you aint tall enough
+  - I'm also the spirit of future past, ya aint tall enough
   - 
   ChoiceOne:
   - what the fuc-
@@ -4047,7 +4173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -276, y: -166}
+  m_AnchoredPosition: {x: 31, y: -166}
   m_SizeDelta: {x: 1125.2, y: 211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1421811713
@@ -4090,7 +4216,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1766827887}
-        m_MethodName: StopAllCoroutines
+        m_MethodName: SecondChoicePressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4945,22 +5071,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9d20ce7c043fc48b805475fcf8ff41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstNPC: {fileID: 389230272}
-  SecondNPC: {fileID: 1415101596}
-  FirstNPChoice1:
-  - I believe it.
-  - Thank you trashcan
-  FirstNPChoice2:
-  - I am not!
-  - 
-  SecondNPChoice1:
-  - I feel like this is a dream
-  - 
-  - 
-  SecondNPChoice2:
-  - I just want my Balloon.
-  - 
-  - 
+  NPC:
+  - {fileID: 0}
+  - {fileID: 389230272}
+  - {fileID: 1415101596}
+  - {fileID: 332122391}
+  - {fileID: 1876185802}
   DescriptiveText: {fileID: 1434608258}
   FirstChoice: {fileID: 163450456}
   SecondChoice: {fileID: 24786647}
@@ -5272,6 +5388,132 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1876185802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1876185808}
+  - component: {fileID: 1876185807}
+  - component: {fileID: 1876185806}
+  - component: {fileID: 1876185805}
+  - component: {fileID: 1876185804}
+  - component: {fileID: 1876185803}
+  m_Layer: 0
+  m_Name: Commuter4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1876185803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876185802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5c9cbfe65883f40840f4e53cee71f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCNumber: 4
+  FirstNPCEntered: 0
+  SecondNPCEntered: 0
+  ThirdNPCEntered: 0
+  FourthNPCEntered: 0
+  OverlayUIGameObject: {fileID: 1766827882}
+  ConversationText:
+  - You are a piece of garbage.
+  - Good. Your highly inflated sens-I mean self is not here.
+  - Believe what you want buddy, I calls it as I sees it.
+  ChoiceOne:
+  - I believe it.
+  - Thank you trashcan.
+  ChoiceTwo:
+  - I am not!
+  - 
+--- !u!65 &1876185804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876185802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1210525, y: 2, z: 1.5567288}
+  m_Center: {x: 0.034865737, y: 0, z: 0.27836442}
+--- !u!23 &1876185805
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876185802}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!136 &1876185806
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876185802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1876185807
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876185802}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1876185808
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876185802}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -1.85, y: -0.41, z: 1.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1882174062
 GameObject:
   m_ObjectHideFlags: 0
