@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	public float CurrentGameplayTime;
-	private CameraShake camShake;
-	private playerController PlayerController;
-	void Start ()
-	{
-		PlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>();
-		camShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate ()
-	{
-		CurrentGameplayTime += Time.deltaTime;
-		if (camShake.SubwayShaking)
-		{
-			PlayerController.PlayerStandstill = true;
-		}
-		else
-		{
-			PlayerController.PlayerStandstill = false;
-		}
-	}
+    private playerLook _playerLook;
+    private playerController _playerController;
+
+    public bool[] NpcRaycastHitted = new bool [5];
+    public bool[] NpcInteracted = new bool [5];
+
+
+    void Start()
+    {
+        _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>();
+        _playerLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<playerLook>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        foreach (var npcInteracted in NpcInteracted)
+        {
+            if (npcInteracted)
+            {
+                _playerLook.DisableMouseLook();
+                _playerController.StopWalking();
+            }
+            else
+            {
+                _playerLook.EnableMouseLook();
+                _playerController.RestartWalking();
+            }
+        }
+    }
 }
+

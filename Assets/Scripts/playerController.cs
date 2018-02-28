@@ -10,6 +10,7 @@ public class playerController : MonoBehaviour
 	private NPCBehaviour NPCBehave2;
 	private NPCBehaviour NPCBehave3;
 	private NPCBehaviour NPCBehave4;
+	private GameManager _gameManager;
 	
 	public bool PlayerStandstill;
 	public float walkingSpeed = 2f;
@@ -20,6 +21,7 @@ public class playerController : MonoBehaviour
  
 	void Awake ()
 	{
+		_gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
 		playerRigidbody = GetComponent<Rigidbody>();
 		NPCBehave1 = ProtoNPC.GetComponent<NPCBehaviour>();
 		NPCBehave2 = ProtoNPC2.GetComponent<NPCBehaviour>();
@@ -30,6 +32,7 @@ public class playerController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () {
         playerMoves();
+
 	}
     public void playerMoves()
     {
@@ -39,14 +42,6 @@ public class playerController : MonoBehaviour
 	    targetDirection = Camera.main.transform.TransformDirection(targetDirection);
 	  
 	    playerRigidbody.MovePosition(playerRigidbody.transform.position + targetDirection *Time.deltaTime  * walkingSpeed);
-	    if (NPCBehave1.FirstNPCEntered || NPCBehave2.SecondNPCEntered || NPCBehave3.ThirdNPCEntered || NPCBehave4.FourthNPCEntered)
-	    {
-		    walkingSpeed = 0f;
-	    }
-	    else if(!NPCBehave1.FirstNPCEntered || !NPCBehave2.SecondNPCEntered || !NPCBehave3.ThirdNPCEntered || !NPCBehave4.FourthNPCEntered)
-	    {
-		    walkingSpeed = 4f;
-	    }
 	    /*if (PlayerStandstill)
 	    {
 		    walkingSpeed = 0f;
@@ -56,5 +51,15 @@ public class playerController : MonoBehaviour
 		    walkingSpeed = 4f;
 	    }*/
     }
+
+	public void StopWalking()
+	{
+	    walkingSpeed = 0f;
+	}
+
+	public void RestartWalking()
+	{
+		walkingSpeed = 4f;
+	}
   
 }

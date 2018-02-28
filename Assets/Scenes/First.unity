@@ -942,9 +942,8 @@ GameObject:
   - component: {fileID: 332122396}
   - component: {fileID: 332122394}
   - component: {fileID: 332122395}
-  - component: {fileID: 332122393}
   - component: {fileID: 332122392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Commuter3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,10 +962,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCNumber: 3
-  FirstNPCEntered: 0
-  SecondNPCEntered: 0
-  ThirdNPCEntered: 0
-  FourthNPCEntered: 0
   OverlayUIGameObject: {fileID: 1766827882}
   ConversationText:
   - Sup Yakult boi, pass me some yoggies.
@@ -978,18 +973,6 @@ MonoBehaviour:
   ChoiceTwo:
   - '*Make a hole and throw at it*'
   - 
---- !u!65 &332122393
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 332122391}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1210525, y: 2, z: 1.5567288}
-  m_Center: {x: 0.034865737, y: 0, z: 0.27836442}
 --- !u!23 &332122394
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1151,9 +1134,8 @@ GameObject:
   - component: {fileID: 389230275}
   - component: {fileID: 389230274}
   - component: {fileID: 389230273}
-  - component: {fileID: 389230277}
   - component: {fileID: 389230278}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Commuter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1227,18 +1209,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &389230277
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 389230272}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1210525, y: 2, z: 1.5567288}
-  m_Center: {x: 0.034865737, y: 0, z: 0.27836442}
 --- !u!114 &389230278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,10 +1221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCNumber: 1
-  FirstNPCEntered: 0
-  SecondNPCEntered: 0
-  ThirdNPCEntered: 0
-  FourthNPCEntered: 0
   OverlayUIGameObject: {fileID: 1766827882}
   ConversationText:
   - You are a piece of garbage.
@@ -3085,7 +3051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSense: 200
-  RayCastDistance: 100
+  RayCastDistance: 20
   ProtoTypeNPC: {fileID: 389230272}
   ProtoTypeNPC2: {fileID: 1415101596}
   ProtoTypeNPC3: {fileID: 332122391}
@@ -3939,9 +3905,8 @@ GameObject:
   - component: {fileID: 1415101601}
   - component: {fileID: 1415101600}
   - component: {fileID: 1415101599}
-  - component: {fileID: 1415101598}
   - component: {fileID: 1415101597}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Commuter2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3960,10 +3925,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCNumber: 2
-  FirstNPCEntered: 0
-  SecondNPCEntered: 0
-  ThirdNPCEntered: 0
-  FourthNPCEntered: 0
   OverlayUIGameObject: {fileID: 1766827882}
   ConversationText:
   - Yoyoyo I'm a pole-tergeist!!
@@ -3975,18 +3936,6 @@ MonoBehaviour:
   ChoiceTwo:
   - I just wanna find my balloon.
   - 
---- !u!65 &1415101598
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1415101596}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8, y: 2.2, z: 7}
-  m_Center: {x: 0.034865737, y: 0, z: 0.27836442}
 --- !u!23 &1415101599
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5072,6 +5021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9d20ce7c043fc48b805475fcf8ff41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reitRunOnce: 0
   NPC:
   - {fileID: 0}
   - {fileID: 389230272}
@@ -5400,9 +5350,8 @@ GameObject:
   - component: {fileID: 1876185807}
   - component: {fileID: 1876185806}
   - component: {fileID: 1876185805}
-  - component: {fileID: 1876185804}
   - component: {fileID: 1876185803}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Commuter4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5421,10 +5370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCNumber: 4
-  FirstNPCEntered: 0
-  SecondNPCEntered: 0
-  ThirdNPCEntered: 0
-  FourthNPCEntered: 0
   OverlayUIGameObject: {fileID: 1766827882}
   ConversationText:
   - Hello child..
@@ -5436,18 +5381,6 @@ MonoBehaviour:
   ChoiceTwo:
   - Hello needle-man
   - 
---- !u!65 &1876185804
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1876185802}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1210525, y: 2, z: 1.5567288}
-  m_Center: {x: 0.034865737, y: 0, z: 0.27836442}
 --- !u!23 &1876185805
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5636,7 +5569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092cadeb88f6111488b9940085a3f908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentGameplayTime: 0
+  NpcRaycastHitted: 0000000000
+  NpcInteracted: 00000000
 --- !u!1 &1949108405
 GameObject:
   m_ObjectHideFlags: 0

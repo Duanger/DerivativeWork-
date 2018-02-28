@@ -19,6 +19,7 @@ public class playerLook : MonoBehaviour {
     private NPCBehaviour NPCBehave2;
     private NPCBehaviour NPCBehave3;
     private NPCBehaviour NPCBehave4;
+    private GameManager _gameManager;
     private GameObject m_PlayerController;
 
 	// Use this for initialization
@@ -27,7 +28,7 @@ public class playerLook : MonoBehaviour {
 	}
     private void Start()
     {
-        m_PlayerController = GameObject.FindGameObjectWithTag("Player");
+        _gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
         NPCBehave1 = ProtoTypeNPC.GetComponent<NPCBehaviour>();
         NPCBehave2 = ProtoTypeNPC2.GetComponent<NPCBehaviour>();
         NPCBehave3 = ProtoTypeNPC3.GetComponent<NPCBehaviour>();
@@ -51,39 +52,39 @@ public class playerLook : MonoBehaviour {
        
       Vector3 clampRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y,0f);
       transform.eulerAngles = clampRot;
-        if (NPCBehave1.FirstNPCEntered || NPCBehave2.SecondNPCEntered || NPCBehave3.ThirdNPCEntered || NPCBehave4.FourthNPCEntered)
-        {
+       
+    }
+    public void DisableMouseLook()
+    {
             mouseSense = 0f;
-        }
-        else if(!NPCBehave1.FirstNPCEntered || !NPCBehave2.SecondNPCEntered || !NPCBehave3.ThirdNPCEntered || !NPCBehave4.FourthNPCEntered)
-        {
+    }
+
+    public void EnableMouseLook()
+    {
             mouseSense = 200f;
-        }
     }
 
     void RaycastSpawning()
     {
-        var leftCommuteRaycastHit = new RaycastHit();
-        var rightCommuteRaycastHit = new RaycastHit();
-        int spawnerLayerMask = LayerMask.GetMask("Spawner");
-        int spawnerLayerMask2 = LayerMask.GetMask("Spawner1");
+        var commuterRaycastHit = new RaycastHit();
+        int commuterLayerMask = LayerMask.GetMask("Commuters");
         Debug.DrawRay(transform.position,transform.forward, Color.blue);
-        if (Physics.Raycast(transform.position, transform.forward, out rightCommuteRaycastHit, RayCastDistance,spawnerLayerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out commuterRaycastHit, RayCastDistance,commuterLayerMask))
         {
-            RightSpawnerHit = true;
+            for (int i = 1; i < _gameManager.NpcRaycastHitted.Length; i++)
+            {
+                if (commuterRaycastHit.collider.gameObject.GetComponent<NPCBehaviour>().NPCNumber == i)
+                {
+                    _gameManager.NpcRaycastHitted[i] = true;
+                }
+            }
         }
-        else if(!Physics.Raycast(transform.position, transform.forward, out rightCommuteRaycastHit, RayCastDistance,spawnerLayerMask))
+        else if(!Physics.Raycast(transform.position, transform.forward, out commuterRaycastHit, RayCastDistance,commuterLayerMask))
         {
-            RightSpawnerHit = false;
+            for (int i = 1; i < _gameManager.NpcRaycastHitted.Length; i++)
+            {
+                    _gameManager.NpcRaycastHitted[i] = false;
+            }
         }
-        if (Physics.Raycast(transform.position, transform.forward, out leftCommuteRaycastHit, RayCastDistance,spawnerLayerMask2))
-        {
-            LeftSpawnerHit = true;
-        }
-        if (!Physics.Raycast(transform.position, transform.forward, out leftCommuteRaycastHit, RayCastDistance,spawnerLayerMask2))
-        {
-            LeftSpawnerHit = false;
-        }
-
     }
 }

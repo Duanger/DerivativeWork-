@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class UICanvasManager : MonoBehaviour
 {
     private AudioSource descriptiveAudioSource;
-    private bool reitRunOnce;
+    [SerializeField]private bool reitRunOnce;
     private bool finishedRunning;
     private int npcNumero;
     private string descriptiveText;
     private playerLook playLooker;
+    private GameManager _gameManager;
     private NPCBehaviour[] npcBehaviours = new NPCBehaviour[4];
-    private NPCBehaviour firstNPCBehave;
-    private NPCBehaviour secondNPCBehave;
+
    
     public GameObject[] NPC = new GameObject[4]; 
     public Text DescriptiveText;
@@ -23,6 +23,7 @@ public class UICanvasManager : MonoBehaviour
 
     void Start()
     {
+        _gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
         for (int i = 1; i < npcBehaviours.Length; i++)
         {
             npcBehaviours[i] = NPC[i].GetComponent<NPCBehaviour>();
@@ -37,8 +38,7 @@ public class UICanvasManager : MonoBehaviour
 
     public void NPCEntered(int npcNum)
     {
-        if (!reitRunOnce && npcBehaviours[1].FirstNPCEntered ||!reitRunOnce && npcBehaviours[2].SecondNPCEntered 
-         || !reitRunOnce && npcBehaviours[3].ThirdNPCEntered || !reitRunOnce && npcBehaviours[4].FourthNPCEntered)
+        if (!reitRunOnce && _gameManager.NpcInteracted[npcNum])
         {
             npcNumero = npcNum;
             StartCoroutine(reiterateDescriptionText(npcBehaviours[npcNum], descriptiveText, DescriptiveText, FirstChoice, SecondChoice,
@@ -58,9 +58,7 @@ public class UICanvasManager : MonoBehaviour
    
     public void FirstChoicePressed()
     {
-        if (npcBehaviours[1].FirstNPCEntered || npcBehaviours[2].SecondNPCEntered
-                                             || npcBehaviours[3].ThirdNPCEntered || npcBehaviours[4].FourthNPCEntered)
-        {
+        
             if (FirstChoice.text != npcBehaviours[npcNumero].ChoiceOne[1])
             {
                 DescriptiveText.text = "";
@@ -73,20 +71,15 @@ public class UICanvasManager : MonoBehaviour
             }
             else if (FirstChoice.text == npcBehaviours[npcNumero].ChoiceOne[1])
             {
-                npcBehaviours[1].FirstNPCEntered = false;
-                npcBehaviours[2].SecondNPCEntered = false;
-                npcBehaviours[3].ThirdNPCEntered = false;
-                npcBehaviours[4].FourthNPCEntered = false;
+                _gameManager.NpcInteracted[npcNumero] = false;
                 gameObject.SetActive(false);
             }
-        }
+        
     }
 
     public void SecondChoicePressed()
     {
-        if (npcBehaviours[1].FirstNPCEntered || npcBehaviours[2].SecondNPCEntered
-                                             || npcBehaviours[3].ThirdNPCEntered || npcBehaviours[4].FourthNPCEntered)
-        {
+       
             if (FirstChoice.text != npcBehaviours[npcNumero].ChoiceTwo[1])
             {
                 DescriptiveText.text = "";
@@ -97,13 +90,10 @@ public class UICanvasManager : MonoBehaviour
                     SecondChoice,
                     npcBehaviours[npcNumero].ChoiceOne, npcBehaviours[npcNumero].ChoiceTwo, 1));
             }
-        }
+        
         else if (SecondChoice.text == npcBehaviours[npcNumero].ChoiceTwo[1])
         {
-            npcBehaviours[1].FirstNPCEntered = false;
-            npcBehaviours[2].SecondNPCEntered = false;
-            npcBehaviours[3].ThirdNPCEntered = false;
-            npcBehaviours[4].FourthNPCEntered = false;
+            _gameManager.NpcInteracted[npcNumero] = false;
             gameObject.SetActive(false);
         }
     }
