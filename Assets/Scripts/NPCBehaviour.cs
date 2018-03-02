@@ -23,18 +23,16 @@ public class NPCBehaviour : MonoBehaviour
 
     void Update()
     {
-        for (int i = 1; i < _gameManager.NpcRaycastHitted.Length; i++)
-        {
-            if (_gameManager.NpcRaycastHitted[i])
+            if (_gameManager.NpcRaycastHitted[NPCNumber])
             {
                 if (Input.GetKey(KeyCode.E))
                 {
-                    _gameManager.NpcInteracted[i] = true;
+                    _gameManager.NpcInteracted[NPCNumber] = true;
                     OverlayUIGameObject.SetActive(true);
-                    overlayManager.NPCEntered(i);
+                    overlayManager.NPCEntered(NPCNumber);
                 }
             }
-        }
+        
     }
 }
 

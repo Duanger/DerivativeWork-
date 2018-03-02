@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private playerLook _playerLook;
     private playerController _playerController;
+    private UICanvasManager _canvas;
 
     public bool[] NpcRaycastHitted = new bool [5];
     public bool[] NpcInteracted = new bool [5];
@@ -27,12 +28,15 @@ public class GameManager : MonoBehaviour
                 _playerLook.DisableMouseLook();
                 _playerController.StopWalking();
             }
-            else
+
+            if (!npcInteracted)
             {
                 _playerLook.EnableMouseLook();
                 _playerController.RestartWalking();
             }
         }
+        
+  
     }
 }
 
