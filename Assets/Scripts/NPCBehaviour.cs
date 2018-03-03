@@ -10,9 +10,12 @@ public class NPCBehaviour : MonoBehaviour
 
     public int NPCNumber;
     public GameObject OverlayUIGameObject;
-    public string[] ConversationText = new string[3];
-    public string[] ChoiceOne = new string[2];
-    public string[] ChoiceTwo = new string[2];
+    [TextArea(1,3)]
+    public string IntroductoryText;
+    [TextArea(1,3)]
+    public string[] ConversationText;
+    public string[] ChoiceOne;
+    public string[] ChoiceTwo;
 
     void Start()
     {
@@ -29,10 +32,9 @@ public class NPCBehaviour : MonoBehaviour
                 {
                     _gameManager.NpcInteracted[NPCNumber] = true;
                     OverlayUIGameObject.SetActive(true);
-                    overlayManager.NPCEntered(NPCNumber);
+                    overlayManager.EnteringNPC(NPCNumber);
                 }
             }
-        
     }
 }
 

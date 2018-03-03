@@ -20,6 +20,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: fakeBalloonMat
     second: {fileID: 2100000, guid: ba3219500290fb94994199dd9e923a4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: 3a06b2f98db667541921095fc26ee17d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

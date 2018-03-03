@@ -43,7 +43,7 @@ public class UICanvasManager : MonoBehaviour
         SecondChoice.SetActive(false);
     }
 
-    public void NPCEntered(int npcNum)
+    public void EnteringNPC(int npcNum)
     {
         if (!reitRunOnce && _gameManager.NpcInteracted[npcNum])
         {
