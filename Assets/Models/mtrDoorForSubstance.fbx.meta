@@ -1,125 +1,119 @@
 fileFormatVersion: 2
-guid: 56c0494272496ec4380c6e10eade1680
-timeCreated: 1520203262
+guid: 90c675300b4f96a4b86e797c08c6728d
+timeCreated: 1520216285
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: pCube1
-    100004: pCube2
-    100006: pCube3
-    100008: pCube4
-    100010: pCube5
-    100012: pCube6
-    100014: pCylinder1
-    100016: pCylinder2
-    100018: polySurface1
-    100020: polySurface1 1
-    100022: polySurface2
-    100024: polySurface4
-    100026: polySurface5
-    100028: pPlane1
-    100030: pPlane2
-    100032: pTorus1
-    100034: pTorus2
-    100036: pTorus3
-    100038: pTorus4
-    100040: pTorus5
-    100042: transform1
-    100044: transform10
-    100046: transform11
-    100048: transform12
-    100050: transform13
-    100052: transform14
-    100054: transform15
-    100056: transform16
-    100058: transform17
-    100060: transform18
-    100062: transform2
-    100064: transform3
-    100066: transform4
-    100068: transform5
-    100070: transform6
-    100072: transform7
-    100074: transform8
-    100076: transform9
+    100004: pCube10
+    100006: pCube11
+    100008: pCube12
+    100010: pCube2
+    100012: pCube3
+    100014: pCube4
+    100016: pCube6
+    100018: pCube7
+    100020: pCube8
+    100022: pCube9
+    100024: pCylinder1
+    100026: pCylinder2
+    100028: pCylinder3
+    100030: pCylinder4
+    100032: pCylinder5
+    100034: pCylinder6
+    100036: pTorus1
+    100038: transform1
+    100040: transform10
+    100042: transform11
+    100044: transform12
+    100046: transform13
+    100048: transform14
+    100050: transform15
+    100052: transform16
+    100054: transform17
+    100056: transform2
+    100058: transform3
+    100060: transform4
+    100062: transform5
+    100064: transform6
+    100066: transform7
+    100068: transform8
+    100070: transform9
     400000: //RootNode
     400002: pCube1
-    400004: pCube2
-    400006: pCube3
-    400008: pCube4
-    400010: pCube5
-    400012: pCube6
-    400014: pCylinder1
-    400016: pCylinder2
-    400018: polySurface1
-    400020: polySurface1 1
-    400022: polySurface2
-    400024: polySurface4
-    400026: polySurface5
-    400028: pPlane1
-    400030: pPlane2
-    400032: pTorus1
-    400034: pTorus2
-    400036: pTorus3
-    400038: pTorus4
-    400040: pTorus5
-    400042: transform1
-    400044: transform10
-    400046: transform11
-    400048: transform12
-    400050: transform13
-    400052: transform14
-    400054: transform15
-    400056: transform16
-    400058: transform17
-    400060: transform18
-    400062: transform2
-    400064: transform3
-    400066: transform4
-    400068: transform5
-    400070: transform6
-    400072: transform7
-    400074: transform8
-    400076: transform9
-    2100000: underseatMat
-    2100002: sideArmMat
-    2100004: blinn1
-    2100006: poleSupporterMat
-    2100008: seeThruMat
-    2100010: lambert1
-    2100012: redPoleSupporter
-    2300000: polySurface1
-    3300000: polySurface1
-    4300000: polySurface1
+    400004: pCube10
+    400006: pCube11
+    400008: pCube12
+    400010: pCube2
+    400012: pCube3
+    400014: pCube4
+    400016: pCube6
+    400018: pCube7
+    400020: pCube8
+    400022: pCube9
+    400024: pCylinder1
+    400026: pCylinder2
+    400028: pCylinder3
+    400030: pCylinder4
+    400032: pCylinder5
+    400034: pCylinder6
+    400036: pTorus1
+    400038: transform1
+    400040: transform10
+    400042: transform11
+    400044: transform12
+    400046: transform13
+    400048: transform14
+    400050: transform15
+    400052: transform16
+    400054: transform17
+    400056: transform2
+    400058: transform3
+    400060: transform4
+    400062: transform5
+    400064: transform6
+    400066: transform7
+    400068: transform8
+    400070: transform9
+    2100000: windowBungMat
+    2100002: arrowMat
+    2100004: doorCeilingMat
+    2100006: windowMat
+    2100008: redPoleMat
+    2100010: metalMat
+    2100012: Default_Material
+    2300000: pCube12
+    3300000: pCube12
+    4300000: pCube12
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: blinn1
+      name: arrowMat
+    second: {fileID: 2100000, guid: 9a30d74b6352bf449903df8e1f6e490a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doorCeilingMat
+    second: {fileID: 2100000, guid: b27239e752147d345a482ce281850f32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalMat
     second: {fileID: 2100000, guid: 91d5511d2f03b9244a96dc7f21f1b875, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: poleSupporterMat
-    second: {fileID: 2100000, guid: 6ad1f42ffedd4024d987cf0b154a0347, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: redPoleSupporter
+      name: redPoleMat
     second: {fileID: 2100000, guid: 24f1c1f77a7bce449aef1e9719fd199e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: seeThruMat
-    second: {fileID: 2100006, guid: 90c675300b4f96a4b86e797c08c6728d, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sideArmMat
-    second: {fileID: 2100000, guid: b27239e752147d345a482ce281850f32, type: 2}
+      name: windowBungMat
+    second: {fileID: 2100000, guid: 56c0494272496ec4380c6e10eade1680, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -149,7 +143,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 20
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
