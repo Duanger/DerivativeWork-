@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: 737faf8573b0fff4ca7cf61f38498020
+timeCreated: 1520220640
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bolder1
+    100004: bolder10
+    100006: bolder11
+    100008: bolder12
+    100010: bolder13
+    100012: bolder14
+    100014: bolder15
+    100016: bolder16
+    100018: bolder17
+    100020: bolder18
+    100022: bolder19
+    100024: bolder2
+    100026: bolder20
+    100028: bolder3
+    100030: bolder4
+    100032: bolder5
+    100034: bolder6
+    100036: bolder7
+    100038: bolder8
+    100040: bolder9
+    400000: //RootNode
+    400002: bolder1
+    400004: bolder10
+    400006: bolder11
+    400008: bolder12
+    400010: bolder13
+    400012: bolder14
+    400014: bolder15
+    400016: bolder16
+    400018: bolder17
+    400020: bolder18
+    400022: bolder19
+    400024: bolder2
+    400026: bolder20
+    400028: bolder3
+    400030: bolder4
+    400032: bolder5
+    400034: bolder6
+    400036: bolder7
+    400038: bolder8
+    400040: bolder9
+    2100000: rockMat
+    2300000: bolder1
+    2300002: bolder10
+    2300004: bolder11
+    2300006: bolder12
+    2300008: bolder13
+    2300010: bolder14
+    2300012: bolder15
+    2300014: bolder16
+    2300016: bolder17
+    2300018: bolder18
+    2300020: bolder19
+    2300022: bolder2
+    2300024: bolder20
+    2300026: bolder3
+    2300028: bolder4
+    2300030: bolder5
+    2300032: bolder6
+    2300034: bolder7
+    2300036: bolder8
+    2300038: bolder9
+    3300000: bolder1
+    3300002: bolder10
+    3300004: bolder11
+    3300006: bolder12
+    3300008: bolder13
+    3300010: bolder14
+    3300012: bolder15
+    3300014: bolder16
+    3300016: bolder17
+    3300018: bolder18
+    3300020: bolder19
+    3300022: bolder2
+    3300024: bolder20
+    3300026: bolder3
+    3300028: bolder4
+    3300030: bolder5
+    3300032: bolder6
+    3300034: bolder7
+    3300036: bolder8
+    3300038: bolder9
+    4300000: bolder1
+    4300002: bolder2
+    4300004: bolder3
+    4300006: bolder4
+    4300008: bolder5
+    4300010: bolder6
+    4300012: bolder7
+    4300014: bolder8
+    4300016: bolder9
+    4300018: bolder10
+    4300020: bolder11
+    4300022: bolder12
+    4300024: bolder13
+    4300026: bolder14
+    4300028: bolder15
+    4300030: bolder16
+    4300032: bolder17
+    4300034: bolder18
+    4300036: bolder19
+    4300038: bolder20
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rockMat
+    second: {fileID: 2100000, guid: ddfdf683cb63cbc42b4f081962d3488b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
