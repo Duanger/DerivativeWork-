@@ -43,6 +43,7 @@ public class FirstChoiceBehaviour : MonoBehaviour
 		if (!_npcBehaviours[_gameManager.CurrentInteractedNPC].RunnedDown &&
 		    _npcBehaviours[_gameManager.CurrentInteractedNPC].MadeAChoice)
 		{
+			_gameManager.NpcWon[_gameManager.CurrentInteractedNPC] = true;
 			_gameManager.NpcInteracted[_gameManager.CurrentInteractedNPC] = false;
 			_gameManager.CurrentInteractedNPC = 0;
 			OverlayCanvas.SetActive(false);

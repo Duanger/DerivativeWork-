@@ -25,6 +25,7 @@
           <e p="playerController.cs" t="Include" />
           <e p="playerLook.cs" t="Include" />
           <e p="PopUpBehaviour.cs" t="Include" />
+          <e p="ScoreManager.cs" t="Include" />
           <e p="SecondChoiceBehaviour.cs" t="Include" />
           <e p="UICanvasManager.cs" t="Include" />
         </e>

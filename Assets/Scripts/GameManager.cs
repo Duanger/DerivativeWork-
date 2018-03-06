@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int CurrentInteractedNPC;
     public bool[] NpcRaycastHitted = new bool [5];
     public bool[] NpcInteracted = new bool [5];
+    public bool[] NpcWon = new bool[5];
 
     void Start()
     {
