@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,9 +9,9 @@ public class GameManager : MonoBehaviour
     private playerController _playerController;
     private UICanvasManager _canvas;
 
+    public int CurrentInteractedNPC;
     public bool[] NpcRaycastHitted = new bool [5];
     public bool[] NpcInteracted = new bool [5];
-
 
     void Start()
     {
@@ -18,7 +19,6 @@ public class GameManager : MonoBehaviour
         _playerLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<playerLook>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         foreach (var npcInteracted in NpcInteracted)

@@ -119,7 +119,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: sideArmMat
-    second: {fileID: 2100000, guid: b27239e752147d345a482ce281850f32, type: 2}
+    second: {fileID: 2100000, guid: d4e4490238e8fc346a0c980089250f25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: underseatMat
+    second: {fileID: 2100000, guid: 912a4380e34b6704195544d685d2aaa8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -43,28 +43,8 @@ public class UICanvasManager : MonoBehaviour
         SecondChoice.SetActive(false);
     }
 
-    public void EnteringNPC(int npcNum)
-    {
-        if (!reitRunOnce && _gameManager.NpcInteracted[npcNum])
-        {
-            npcNumero = npcNum;
-            StartCoroutine(reiterateDescriptionText(npcBehaviours[npcNum], descriptiveText, DescriptiveText, firstChoice, secondChoice,
-                npcBehaviours[npcNum].ChoiceOne, npcBehaviours[npcNum].ChoiceTwo, ChoiceNumber));
-            reitRunOnce = true;
-        }
-        /*if (reitRunOnce && finishedRunning)
-        {
-            if (!firstNPCBehave.FirstNPCEntered)
-            {
-                reitRunOnce = false;
-                finishedRunning = false;
-            }
-        }*/
-
-    }
    
-   
-    public void FirstChoicePressed()
+   /* public void FirstChoicePressed()
     {
         
             if (firstChoice.text != npcBehaviours[npcNumero].ChoiceOne[ChoiceNumber])
@@ -100,39 +80,7 @@ public class UICanvasManager : MonoBehaviour
             _gameManager.NpcInteracted[npcNumero] = false;
             gameObject.SetActive(false);
         }
-    }
+    }*/
 
-    public IEnumerator reiterateDescriptionText(NPCBehaviour npcBehave,string descriptionText,Text descriptionTextObj, Text firstText, Text secondText, string[] firstNPCString,
-        string[] secondNPCString, int choiceNumber)
-    {
-        descriptionText = npcBehave.ConversationText[choiceNumber];
-        foreach (char letter in descriptionText.ToCharArray())
-        {
-            descriptionTextObj.text += letter;
-            descriptiveAudioSource.PlayOneShot(descriptiveAudioSource.clip);
-            yield return 0;
-            yield return new WaitForSeconds(0.09f);
-        }
-
-        if (descriptionTextObj.text == npcBehave.ConversationText[choiceNumber])
-        {
-            finishedRunning = true;
-            EnableChoiceText(npcBehave,FirstChoice,SecondChoice,firstChoice,secondChoice,choiceNumber);
-            ChoiceNumber++;
-            StopCoroutine(reiterateDescriptionText(npcBehave,descriptionText, descriptionTextObj, firstText, secondText,
-                firstNPCString, secondNPCString, choiceNumber));
-        }
-    }
-
-    private void EnableChoiceText(NPCBehaviour npcBehaviour, GameObject choice1, GameObject choice2, Text choice1Text,Text choice2Text, int choiceNumber)
-    {
-        if (finishedRunning)
-        {
-            choice1.SetActive(true);
-            choice2.SetActive(true);
-            choice1Text.text = npcBehaviour.ChoiceOne[choiceNumber];
-            choice2Text.text = npcBehaviour.ChoiceTwo[choiceNumber];
-            finishedRunning = false;
-        }
-    }
+    
 }
