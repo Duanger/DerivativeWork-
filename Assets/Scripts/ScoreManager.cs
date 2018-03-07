@@ -24,16 +24,17 @@ public class ScoreManager : MonoBehaviour
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		foreach (var npcWonIt in _gameMan.NpcWon)
-		{
-			if (npcWonIt)
-			{
-				foreach (var vicSphererend in VictoryRenderers)
-				{
-					_floatAlone += Time.deltaTime / ColoringInDuration;
-					vicSphererend.material.color = Color.Lerp(ColorDefault, FinalColor, Time.deltaTime * _floatAlone);
-				}
+	
+			if (_gameMan.NpcWon[_gameMan.RecentWonIndex])
+			{				
+				LerpColor(VictoryRenderers[_gameMan.RecentWonIndex]);
 			}
-		}
+		
+	}
+
+ void LerpColor(Renderer rend)
+	{
+		_floatAlone += Time.deltaTime / ColoringInDuration;
+		rend.material.color = Color.Lerp(ColorDefault, FinalColor, 1f);
 	}
 }

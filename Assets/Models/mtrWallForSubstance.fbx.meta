@@ -55,7 +55,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: wallMat
-    second: {fileID: 2100000, guid: 6c9a93b83e3dc874594ff76035e017d0, type: 2}
+    second: {fileID: 2100000, guid: 1976490772a83a448b9fb6f43fa50fa5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

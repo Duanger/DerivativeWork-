@@ -1,119 +1,185 @@
 fileFormatVersion: 2
-guid: 90c675300b4f96a4b86e797c08c6728d
-timeCreated: 1520216285
+guid: fcf2f8025e1376745a2aa71d335d4bbf
+timeCreated: 1520400755
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCube1
-    100004: pCube10
-    100006: pCube11
-    100008: pCube12
-    100010: pCube2
-    100012: pCube3
-    100014: pCube4
-    100016: pCube6
-    100018: pCube7
-    100020: pCube8
-    100022: pCube9
-    100024: pCylinder1
-    100026: pCylinder2
-    100028: pCylinder3
-    100030: pCylinder4
-    100032: pCylinder5
-    100034: pCylinder6
-    100036: pTorus1
-    100038: transform1
-    100040: transform10
-    100042: transform11
-    100044: transform12
-    100046: transform13
-    100048: transform14
-    100050: transform15
-    100052: transform16
-    100054: transform17
-    100056: transform2
-    100058: transform3
-    100060: transform4
-    100062: transform5
-    100064: transform6
-    100066: transform7
-    100068: transform8
-    100070: transform9
-    400000: //RootNode
-    400002: pCube1
-    400004: pCube10
-    400006: pCube11
-    400008: pCube12
-    400010: pCube2
-    400012: pCube3
-    400014: pCube4
-    400016: pCube6
-    400018: pCube7
-    400020: pCube8
-    400022: pCube9
-    400024: pCylinder1
-    400026: pCylinder2
-    400028: pCylinder3
-    400030: pCylinder4
-    400032: pCylinder5
-    400034: pCylinder6
-    400036: pTorus1
-    400038: transform1
-    400040: transform10
-    400042: transform11
-    400044: transform12
-    400046: transform13
-    400048: transform14
-    400050: transform15
-    400052: transform16
-    400054: transform17
-    400056: transform2
-    400058: transform3
-    400060: transform4
-    400062: transform5
-    400064: transform6
-    400066: transform7
-    400068: transform8
-    400070: transform9
-    2100000: windowBungMat
-    2100002: arrowMat
-    2100004: doorCeilingMat
-    2100006: windowMat
-    2100008: redPoleMat
-    2100010: metalMat
-    2100012: Default_Material
-    2300000: pCube12
-    3300000: pCube12
-    4300000: pCube12
+    100000: group2
+    100002: group2_pasted__polySurface5
+    100004: group2_pasted__polySurface6
+    100006: group2_pasted__polySurface7
+    100008: //RootNode
+    100010: pasted__pCube1
+    100012: pasted__pCube10
+    100014: pasted__pCube11
+    100016: pasted__pCube12
+    100018: pasted__pCube13
+    100020: pasted__pCube15
+    100022: pasted__pCube16
+    100024: pasted__pCube17
+    100026: pasted__pCube18
+    100028: pasted__pCube19
+    100030: pasted__pCube2
+    100032: pasted__pCube3
+    100034: pasted__pCube4
+    100036: pasted__pCube6
+    100038: pasted__pCube7
+    100040: pasted__pCube8
+    100042: pasted__pCube9
+    100044: pasted__pCylinder1
+    100046: pasted__pCylinder2
+    100048: pasted__pCylinder3
+    100050: pasted__pCylinder4
+    100052: pasted__pCylinder5
+    100054: pasted__pCylinder6
+    100056: pasted__polySurface4
+    100058: pasted__polySurface5
+    100060: pasted__polySurface5 1
+    100062: pasted__pTorus1
+    100064: pasted__transform1
+    100066: pasted__transform10
+    100068: pasted__transform11
+    100070: pasted__transform12
+    100072: pasted__transform13
+    100074: pasted__transform14
+    100076: pasted__transform15
+    100078: pasted__transform16
+    100080: pasted__transform17
+    100082: pasted__transform18
+    100084: pasted__transform19
+    100086: pasted__transform2
+    100088: pasted__transform20
+    100090: pasted__transform21
+    100092: pasted__transform22
+    100094: pasted__transform23
+    100096: pasted__transform24
+    100098: pasted__transform25
+    100100: pasted__transform3
+    100102: pasted__transform4
+    100104: pasted__transform5
+    100106: pasted__transform6
+    100108: pasted__transform7
+    100110: pasted__transform8
+    100112: pasted__transform9
+    100114: transform26
+    100116: transform27
+    100118: transform28
+    100120: transform29
+    400000: group2
+    400002: group2_pasted__polySurface5
+    400004: group2_pasted__polySurface6
+    400006: group2_pasted__polySurface7
+    400008: //RootNode
+    400010: pasted__pCube1
+    400012: pasted__pCube10
+    400014: pasted__pCube11
+    400016: pasted__pCube12
+    400018: pasted__pCube13
+    400020: pasted__pCube15
+    400022: pasted__pCube16
+    400024: pasted__pCube17
+    400026: pasted__pCube18
+    400028: pasted__pCube19
+    400030: pasted__pCube2
+    400032: pasted__pCube3
+    400034: pasted__pCube4
+    400036: pasted__pCube6
+    400038: pasted__pCube7
+    400040: pasted__pCube8
+    400042: pasted__pCube9
+    400044: pasted__pCylinder1
+    400046: pasted__pCylinder2
+    400048: pasted__pCylinder3
+    400050: pasted__pCylinder4
+    400052: pasted__pCylinder5
+    400054: pasted__pCylinder6
+    400056: pasted__polySurface4
+    400058: pasted__polySurface5
+    400060: pasted__polySurface5 1
+    400062: pasted__pTorus1
+    400064: pasted__transform1
+    400066: pasted__transform10
+    400068: pasted__transform11
+    400070: pasted__transform12
+    400072: pasted__transform13
+    400074: pasted__transform14
+    400076: pasted__transform15
+    400078: pasted__transform16
+    400080: pasted__transform17
+    400082: pasted__transform18
+    400084: pasted__transform19
+    400086: pasted__transform2
+    400088: pasted__transform20
+    400090: pasted__transform21
+    400092: pasted__transform22
+    400094: pasted__transform23
+    400096: pasted__transform24
+    400098: pasted__transform25
+    400100: pasted__transform3
+    400102: pasted__transform4
+    400104: pasted__transform5
+    400106: pasted__transform6
+    400108: pasted__transform7
+    400110: pasted__transform8
+    400112: pasted__transform9
+    400114: transform26
+    400116: transform27
+    400118: transform28
+    400120: transform29
+    2100000: pasted__redPoleMat1
+    2100002: pasted__metalMat1
+    2100004: pasted__correctColorMat2
+    2100006: arrowMat
+    2100008: pasted__BungMyLambertMat1
+    2100010: BungMyLambertMat
+    2100012: doorCeilingMat
+    2100014: mapMat
+    2300000: group2_pasted__polySurface7
+    3300000: group2_pasted__polySurface7
+    4300000: group2_pasted__polySurface7
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BungMyLambertMat
+    second: {fileID: 2100000, guid: 1ddeb5d3576949d48bbba73a19dab188, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: arrowMat
-    second: {fileID: 2100000, guid: 9a30d74b6352bf449903df8e1f6e490a, type: 2}
+    second: {fileID: 2100000, guid: 88ad7a8ee69f3eb4996418bb0a88cbef, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: doorCeilingMat
-    second: {fileID: 2100000, guid: d4e4490238e8fc346a0c980089250f25, type: 2}
+    second: {fileID: 2100000, guid: 1976490772a83a448b9fb6f43fa50fa5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: metalMat
+      name: mapMat
+    second: {fileID: 2100000, guid: b57bfb60e6ea746449e340d04c357a4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__BungMyLambertMat1
+    second: {fileID: 2100000, guid: 912a4380e34b6704195544d685d2aaa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__correctColorMat2
+    second: {fileID: 2100000, guid: 6a52f66f2f2450e4f9bca44c3cb82c74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__metalMat1
     second: {fileID: 2100000, guid: 91d5511d2f03b9244a96dc7f21f1b875, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: redPoleMat
+      name: pasted__redPoleMat1
     second: {fileID: 2100000, guid: 24f1c1f77a7bce449aef1e9719fd199e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: windowBungMat
-    second: {fileID: 2100000, guid: 912a4380e34b6704195544d685d2aaa8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -10,6 +10,7 @@ public class FirstChoiceBehaviour : MonoBehaviour
 	private NPCBehaviour[] _npcBehaviours = new NPCBehaviour[5];
 	private Text thisText;
 	private Text otherText;
+	private Button _thisButton;
 
 	public GameObject OverlayCanvas;
 	public GameObject OtherChoice;
@@ -18,12 +19,27 @@ public class FirstChoiceBehaviour : MonoBehaviour
 	{
 		thisText = GetComponentInChildren<Text>();
 		otherText = OtherChoice.GetComponentInChildren<Text>();
+		_thisButton = GetComponent<Button>();
 		for (int i = 1; i < _npcBehaviours.Length;i++)
 		{
 			_npcBehaviours[i] = CommuterPeople[i].GetComponent<NPCBehaviour>();
 		}
 
 		_gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+	}
+
+	void Update()
+	{
+		//_thisButton.transition.
+		if (!_npcBehaviours[_gameManager.CurrentInteractedNPC].RunnedDown &&
+		    _npcBehaviours[_gameManager.CurrentInteractedNPC].MadeAChoice)
+		{
+			_gameManager.RecentWonIndex = _gameManager.CurrentInteractedNPC;
+			_gameManager.NpcWon[_gameManager.CurrentInteractedNPC] = true;
+			_gameManager.NpcInteracted[_gameManager.CurrentInteractedNPC] = false;
+			_gameManager.CurrentInteractedNPC = 0;
+			OverlayCanvas.SetActive(false);
+		}
 	}
 	
 	public void FirstChoiceClicked()
@@ -40,13 +56,6 @@ public class FirstChoiceBehaviour : MonoBehaviour
 				0));
 		}
 
-		if (!_npcBehaviours[_gameManager.CurrentInteractedNPC].RunnedDown &&
-		    _npcBehaviours[_gameManager.CurrentInteractedNPC].MadeAChoice)
-		{
-			_gameManager.NpcWon[_gameManager.CurrentInteractedNPC] = true;
-			_gameManager.NpcInteracted[_gameManager.CurrentInteractedNPC] = false;
-			_gameManager.CurrentInteractedNPC = 0;
-			OverlayCanvas.SetActive(false);
-		}
+		
 	}
 }
