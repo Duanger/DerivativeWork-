@@ -8,6 +8,7 @@ public class SecondChoiceBehaviour : MonoBehaviour {
 	
 	private GameManager _gameManager;
 	private NPCBehaviour[] _npcBehaviours = new NPCBehaviour[5];
+	private FirstChoiceBehaviour _overtBehave;
 	private Text thisText;
 	private Text otherText;
 	
@@ -18,6 +19,7 @@ public class SecondChoiceBehaviour : MonoBehaviour {
 	{
 		thisText = GetComponentInChildren<Text>();
 		otherText = OvertChoice.GetComponentInChildren<Text>();
+		_overtBehave = OvertChoice.GetComponent<FirstChoiceBehaviour>();
 		for (int i = 1; i < _npcBehaviours.Length;i++)
 		{
 			_npcBehaviours[i] = CommuterPeople[i].GetComponent<NPCBehaviour>();
@@ -27,6 +29,7 @@ public class SecondChoiceBehaviour : MonoBehaviour {
 	}
 	public void SecondChoiceClicked()
 	{
+		_overtBehave.ChoiceIteratedIndex++;
 		if (!_npcBehaviours[_gameManager.CurrentInteractedNPC].RunnedDown && !_npcBehaviours[_gameManager.CurrentInteractedNPC].MadeAChoice)
 		{
 			thisText.text = "";
@@ -36,15 +39,15 @@ public class SecondChoiceBehaviour : MonoBehaviour {
 				_npcBehaviours[_gameManager.CurrentInteractedNPC].SecondChoiceTextComp, _npcBehaviours[_gameManager.CurrentInteractedNPC].ChoiceTwo[0], 
 				_npcBehaviours[_gameManager.CurrentInteractedNPC].ChoiceTwo[1],
 				1));
-			_npcBehaviours[_gameManager.CurrentInteractedNPC].MadeAChoice = true;
+			//_npcBehaviours[_gameManager.CurrentInteractedNPC].MadeAChoice = true;
 
 		}
-		if (!_npcBehaviours[_gameManager.CurrentInteractedNPC].RunnedDown &&
+		/*if (!_npcBehaviours[_gameManager.CurrentInteractedNPC].RunnedDown &&
 		    _npcBehaviours[_gameManager.CurrentInteractedNPC].MadeAChoice)
 		{
 			_gameManager.NpcInteracted[_gameManager.CurrentInteractedNPC] = false;
 			_gameManager.CurrentInteractedNPC = 0;
 			CanvasOverlay.SetActive(false);
-		}
+		}*/
 	}
 }

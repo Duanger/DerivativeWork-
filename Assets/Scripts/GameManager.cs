@@ -23,24 +23,23 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        foreach (var npcInteracted in NpcInteracted)
+        MouseLookAbler();
+
+    }
+
+    void MouseLookAbler()
+    {
+        if (NpcInteracted[CurrentInteractedNPC])
         {
-            if (npcInteracted)
-            {
-                _playerLook.DisableMouseLook();
-                _playerController.StopWalking();
-            }
+            _playerLook.DisableMouseLook();
+            _playerController.StopWalking();
         }
 
-        for (int i = 1; i < 6; i++)
+        else if (!NpcInteracted[CurrentInteractedNPC] || CurrentInteractedNPC == 0)
         {
-            if (!NpcInteracted[i])
-            {
-                _playerLook.EnableMouseLook();
-                _playerController.RestartWalking();
-            }
+            _playerLook.EnableMouseLook();
+            _playerController.RestartWalking();
         }
-
     }
 }
 

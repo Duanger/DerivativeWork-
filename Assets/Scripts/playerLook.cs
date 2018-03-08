@@ -21,6 +21,7 @@ public class playerLook : MonoBehaviour {
     private NPCBehaviour NPCBehave4;
     private GameManager _gameManager;
     private GameObject m_PlayerController;
+    private Transform _playerTrans;
 
 	// Use this for initialization
 	void Awake () {
@@ -29,6 +30,7 @@ public class playerLook : MonoBehaviour {
     private void Start()
     {
         _gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+        _playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         NPCBehave1 = ProtoTypeNPC.GetComponent<NPCBehaviour>();
         NPCBehave2 = ProtoTypeNPC2.GetComponent<NPCBehaviour>();
         NPCBehave3 = ProtoTypeNPC3.GetComponent<NPCBehaviour>();
@@ -47,12 +49,25 @@ public class playerLook : MonoBehaviour {
         float m_xPos = Input.GetAxis("Mouse X");
         float m_yPos = Input.GetAxis("Mouse Y");
 
+        Vector3 playerTargetRot = _playerTrans.transform.rotation.eulerAngles;
 
        transform.Rotate(-m_yPos * Time.deltaTime * mouseSense, m_xPos * Time.deltaTime * mouseSense, 0f);
-       
-      Vector3 clampRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y,0f);
-      transform.eulerAngles = clampRot;
-       
+        Vector3 clampRot = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,0f);
+        transform.eulerAngles = clampRot;
+
+        m_xClamp -= transform.rotation.eulerAngles.y;
+        playerTargetRot.x -= transform.rotation.eulerAngles.x;
+
+        if (m_xClamp > 90)
+        {
+            m_xClamp = 90;
+            playerTargetRot.x = 90;
+        }
+        else if (m_xClamp < -90)
+        {
+            m_xClamp = -90;
+            playerTargetRot.x = 270;
+        }
     }
     public void DisableMouseLook()
     {
