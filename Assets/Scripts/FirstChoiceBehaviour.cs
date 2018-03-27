@@ -35,7 +35,15 @@ public class FirstChoiceBehaviour : MonoBehaviour
 		if (ChoiceIteratedIndex == 2)
 		{
 			_gameManager.RecentWonIndex = _gameManager.CurrentInteractedNPC;
-			_gameManager.NpcWon[_gameManager.CurrentInteractedNPC] = true;
+			if (_gameManager.NpcInteracted[4])
+			{
+				_gameManager.NpcWon[4] = true;
+				CommuterPeople[4].SetActive(false);
+			}
+			else
+			{
+				_gameManager.NpcWon[_gameManager.CurrentInteractedNPC] = true;
+			}
 			_gameManager.NpcInteracted[_gameManager.CurrentInteractedNPC] = false;
 			_gameManager.CurrentInteractedNPC = 0;
 			ChoiceIteratedIndex = 0;
